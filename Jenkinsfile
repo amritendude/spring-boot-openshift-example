@@ -7,6 +7,11 @@ pipeline {
         sh "echo $JAVA_HOME"
       }
     }
+    stage('Permissions') {
+      steps {
+        sh 'chmod 775 *'
+      }
+    }
     stage('Build App') {
       steps {
         sh "./mvnw clean package"
