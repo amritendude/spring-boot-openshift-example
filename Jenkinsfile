@@ -2,6 +2,11 @@ pipeline {
   agent any
 
   stages {
+    stage('Environment') {
+      steps {
+        sh "echo $JAVA_HOME"
+      }
+    }
     stage('Build App') {
       steps {
         sh "mvnw clean package"
