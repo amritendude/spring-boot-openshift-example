@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Build App') {
       steps {
-        sh "mvn clean install"
+        sh "mvnw clean package"
       }
     }
     stage('Create Image Builder') {
