@@ -4,7 +4,8 @@ pipeline {
   stages {
       stage('Maven') {
       steps {
-        sh "which mvn"
+        sh "which mvn > mvn.txt"
+        sh "cat mvn.txt"
       }
     }
     stage('Build App') {
