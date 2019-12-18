@@ -1,20 +1,12 @@
 pipeline {
-  agent any
+  agent {
+      label 'maven'
+  }
 
   stages {
-    stage('Environment') {
-      steps {
-        sh "echo $JAVA_HOME"
-      }
-    }
-    stage('Permissions') {
-      steps {
-        sh 'chmod 775 *'
-      }
-    }
     stage('Build App') {
       steps {
-        sh "./mvnw clean package -DskipTests=true"
+        sh "mvn clean package -DskipTests=true"
       }
     }
     stage('Create Image Builder') {
