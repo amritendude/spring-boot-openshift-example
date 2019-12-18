@@ -2,6 +2,11 @@ pipeline {
   agent any
 
   stages {
+      stage('Maven') {
+      steps {
+        sh "which mvn"
+      }
+    }
     stage('Build App') {
       steps {
         sh "mvn clean install"
