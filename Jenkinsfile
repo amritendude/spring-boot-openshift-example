@@ -54,7 +54,7 @@ pipeline {
       steps {
         script {
           openshift.withCluster() {
-            openshift.newApp("springbootapp:uat", "--name=springbootapp-uat").narrow('svc').expose()
+            openshift.newApp("springbootapp:latest", "--name=springbootapp-uat").narrow('svc').expose()
           }
         }
       }
