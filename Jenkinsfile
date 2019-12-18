@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Build App') {
       steps {
-        sh "./mvnw clean package"
+        sh "./mvnw clean package -DskipTests=true"
       }
     }
     stage('Create Image Builder') {
