@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Build App') {
       steps {
-        sh "mvnw clean package"
+        sh "./mvnw clean package"
       }
     }
     stage('Create Image Builder') {
